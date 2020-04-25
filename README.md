@@ -36,7 +36,7 @@ In this workshop we will:
 - talk about different sources of truth about the history of a project
 - define what a change log is and where we can store it to make it accessible for everyone
 - learn how to maintain parallel flows of versioning within a project
-- build a tool in Node that is capable of deducing the next version to come up and creating change logs
+- use Test-Driven Development approach to build a dependency-free tool in Node that is capable of deducing the next version to come up and creating change logs
 
 ## Authors
 
