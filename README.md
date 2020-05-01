@@ -9,7 +9,7 @@
 - [x] Read the [Contribution guide](https://github.com/raini-dev/raini/blob/master/.github/CONTRIBUTING.md#suggesting-a-workshop)
 - [x] Create a repository using the [Raini workshop template](https://github.com/raini-dev/raini-workshop-template/). Include all branches to avoid the need of creating `dev` branch by yourself;
 - [x] Fill in the `README.md` file;
-- [ ] **If the workshop includes theoretical part**, create a PowerPoint presentation using our template (TBD: `Presentation template`) and share it as `./slides.pptx` in the repository (check out our [Theory Preparation Guide](https://github.com/raini-dev/raini/blob/master/docs/guides/theory-preparation-guide.md);
+- [x] **If the workshop includes theoretical part**, create a PowerPoint presentation using our template (TBD: `Presentation template`) and share it as `./slides.pptx` in the repository (check out our [Theory Preparation Guide](https://github.com/raini-dev/raini/blob/master/docs/guides/theory-preparation-guide.md);
 - [ ] **IF the workshop includes practical part**, put the starting point of code in the `dev` branch and all the following recovery points in subbranches of the repository (check out our [Code Preparation Guide](https://github.com/raini-dev/raini/blob/master/docs/guides/code-preparation-guide.md);
 - [ ] Fill in the `./INSTRUCTORS_NOTES.md` (see [Instructor's Notes Guide](https://github.com/raini-dev/raini/blob/master/docs/guides/instructors-notes-guide.md) for details);
 - [ ] Create a `Propose a workshop` issue [here](https://github.com/raini-dev/raini/issues/new/choose). Follow the guildelines in the issue template;
