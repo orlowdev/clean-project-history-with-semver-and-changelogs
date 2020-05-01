@@ -15,6 +15,10 @@
 - [ ] Create a `Propose a workshop` issue [here](https://github.com/raini-dev/raini/issues/new/choose). Follow the guildelines in the issue template;
 - [ ] Make sure everything above is checked and delete this checklist.
 
+## Before the workshop
+
+- Fork and clone this repository to your local machine or import it to your favourite tool like [Glitch](https://glitch.com)
+
 ## List of Requirements
 
 - basic knowledge of Git including common commands (`commit`, `push`, `merge`, `log`)
@@ -42,7 +46,7 @@ In this workshop we will:
 
 ### Sergei Orlov
 
-Creator of Raini.dev. Solution Architect. Ex-teacher.
+Creator of Raini.dev.
 
 ---
 
