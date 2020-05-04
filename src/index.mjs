@@ -6,6 +6,7 @@ import { ExitIfNoVersion } from "./pipes/ExitIfNoVersion.mjs"
 import { GetVersionCommit } from "./pipes/GetVersionCommit.mjs"
 import { GetChanges } from "./pipes/GetChanges.mjs"
 import { ForceBump } from "./pipes/ForceBump.mjs"
+import { MakeChangelog } from "./pipes/MakeChangelog.mjs"
 import { Log } from "./pipes/Log.mjs"
 
 const argv = process.argv.slice(2)
@@ -28,5 +29,6 @@ GetLatestVersion(execOrElse(() => "0.0.0"))
   .concat(ForceBump)
   .concat(MakeNewVersion)
   .concat(ExitIfNoVersion(() => process.exit(0)))
+  .concat(MakeChangelog)
   .concat(Log(console.log))
   .run({ argv, conventions })
