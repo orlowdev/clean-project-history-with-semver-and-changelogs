@@ -10,43 +10,41 @@
 - [x] Create a repository using the [Raini workshop template](https://github.com/raini-dev/raini-workshop-template/). Include all branches to avoid the need of creating `dev` branch by yourself;
 - [x] Fill in the `README.md` file;
 - [x] **If the workshop includes theoretical part**, create a PowerPoint presentation using our template (TBD: `Presentation template`) and share it as `./slides.pptx` in the repository (check out our [Theory Preparation Guide](https://github.com/raini-dev/raini/blob/master/docs/guides/theory-preparation-guide.md);
-- [ ] **IF the workshop includes practical part**, put the starting point of code in the `dev` branch and all the following recovery points in subbranches of the repository (check out our [Code Preparation Guide](https://github.com/raini-dev/raini/blob/master/docs/guides/code-preparation-guide.md);
+- [x] **IF the workshop includes practical part**, put the starting point of code in the `dev` branch and all the following recovery points in subbranches of the repository (check out our [Code Preparation Guide](https://github.com/raini-dev/raini/blob/master/docs/guides/code-preparation-guide.md);
 - [ ] Fill in the `./INSTRUCTORS_NOTES.md` (see [Instructor's Notes Guide](https://github.com/raini-dev/raini/blob/master/docs/guides/instructors-notes-guide.md) for details);
 - [ ] Create a `Propose a workshop` issue [here](https://github.com/raini-dev/raini/issues/new/choose). Follow the guildelines in the issue template;
 - [ ] Make sure everything above is checked and delete this checklist.
 
-## Before the workshop
-
-- Fork and clone this repository to your local machine or import it to your favourite tool like [Glitch](https://glitch.com)
-
-## List of Requirements
-
-- basic knowledge of Git including common commands (`commit`, `push`, `merge`, `log`)
-- good understanding of JavaScript (ES6+) for following with the code
-- intermediate English to be able to keep up with the materials
-- a laptop with Internet access and a code editor of your choice
-- an active GitHub account
-- Node Latest installed on the machine (v13.12.0 at the time of writing)
-- Git installed on the machine (v2.21.0 at the time of writing)
-
 ## Description
 
-Learn how to share the updates of your software with collaborators, users and other stakeholders in a clear and understandable way. Automate the process of writing the project history following the industry standarts and best practices.
+Learn how to share the updates of your software with collaborators, users and other stakeholders in a clear and understandable way. Automate the process of writing the project history following the industry standards and best practices.
 
 In this workshop we will:
 
 - discuss various approaches to versioning
 - deep-dive into Semantic Versioning, by far the most popular versioning scheme nowadays
 - talk about different sources of truth about the history of a project
-- define what a change log is and where we can store it to make it accessible for everyone
+- define what a changelog is and where we can store it to make it accessible for everyone
 - learn how to maintain parallel flows of versioning within a project
-- use Test-Driven Development approach to build a dependency-free tool in Node that is capable of deducing the next version to come up and creating change logs
+- write some ahead of the curve functional code featuring monoids, mjs and tagged templates
+- build from scratch a dependency-free versioning tool in Node that is capable of deducing the next version to come up and creating changelogs
 
-## Authors
+## List of requirement
 
-### Sergei Orlov
+- basic knowledge of Git including common commands (`commit`, `push`, `log`)
+- good understanding of JavaScript (ES6+)
+- at least intermediate English
+- a laptop with Internet access and a code editor of your choice
+- an active GitHub account
+- GitHub repo (link to be added soon) forked and cloned to the local machine
+- Node Latest installed on the machine (v13.12.0 at the time of writing)
+- Git installed on the machine (v2.21.0 at the time of writing)
 
-Creator of Raini.dev.
+## **Authors**
+
+### **Sergei Orlov**
+
+Founder of Raini.dev.
 
 ---
 
