@@ -28,13 +28,13 @@ Options:
 ### Running
 
 ```text
-node src/index.mjs
+npm start
 ```
 
 ### Testing
 
 ```text
-node tests/index.mjs
+npm t
 ```
 
 ## What to do next
