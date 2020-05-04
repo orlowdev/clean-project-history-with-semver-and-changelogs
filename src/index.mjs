@@ -1,5 +1,6 @@
 import { execSync } from "child_process"
 import { execWith } from "./execWith.mjs"
+import { ExtendPipe } from "./Pipe.mjs"
 import { GetLatestVersion } from "./pipes/GetLatestVersion.mjs"
 import { MakeNewVersion } from "./pipes/MakeNewVersion.mjs"
 import { ExitIfNoVersion } from "./pipes/ExitIfNoVersion.mjs"
@@ -23,12 +24,16 @@ const execOrExit = execOrElse(e => {
   process.exit(1)
 })
 
+const MakeChangelogIfRequired = argv.includes("--changelog")
+  ? MakeChangelog
+  : ExtendPipe.empty()
+
 GetLatestVersion(execOrElse(() => "0.0.0"))
   .concat(GetVersionCommit(execOrExit))
   .concat(GetChanges(execOrExit))
   .concat(ForceBump)
   .concat(MakeNewVersion)
   .concat(ExitIfNoVersion(() => process.exit(0)))
-  .concat(MakeChangelog)
+  .concat(MakeChangelogIfRequired)
   .concat(Log(console.log))
   .run({ argv, conventions })
