@@ -24,6 +24,8 @@ const execOrExit = execOrElse(e => {
   process.exit(1)
 })
 
+const stdOut = str => process.stdout.write(str)
+
 const MakeChangelogIfRequired = argv.includes("--changelog")
   ? MakeChangelog
   : ExtendPipe.empty()
@@ -35,5 +37,5 @@ GetLatestVersion(execOrElse(() => "0.0.0"))
   .concat(MakeNewVersion)
   .concat(ExitIfNoVersion(() => process.exit(0)))
   .concat(MakeChangelogIfRequired)
-  .concat(Log(console.log))
+  .concat(Log(stdOut))
   .run({ argv, conventions })
