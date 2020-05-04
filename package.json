@@ -1,0 +1,17 @@
+{
+  "name": "clean-project-history-with-semver-and-changelogs",
+  "version": "0.0.0",
+  "description": "InVersion is a tool written in JavaScript that evaluates the changes since the previous version, deduces the next one to be released and, optionally, generates a changelog in Markdown for the new version.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ./tests/index.mjs --color",
+    "start": "node ./src/index.mjs"
+  },
+  "keywords": [],
+  "author": {
+    "name": "Sergei Orlov",
+    "email": "priestine1.dev@gmail.com",
+    "url": "https://raini.dev"
+  },
+  "license": "MIT"
+}
