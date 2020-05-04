@@ -1,4 +1,4 @@
-import { ExtendPipe, Pipe } from "../src/pipe.mjs"
+import { ExtendPipe, Pipe } from "../src/Pipe.mjs"
 import { describe, expect, it } from "./clown.mjs"
 
 describe("Pipe", () => {
