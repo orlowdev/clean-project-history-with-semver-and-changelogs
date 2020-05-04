@@ -1,55 +1,64 @@
-# Clean Project History with Semantic Versioning and Changelogs
+# InVersion
 
-[![theory: elementary](https://img.shields.io/badge/theory-elementary-yellow)](https://github.com/raini-dev/raini/blob/master/docs/workshop-difficulty-levels.md)
-[![practice: intermediate](https://img.shields.io/badge/practice-intermediate-orange)](https://github.com/raini-dev/raini/blob/master/docs/workshop-difficulty-levels.md)
-[![raini](https://img.shields.io/badge/raini-workshop-indianred)](https://github.com/raini-dev/raini)
+InVersion is a tool written in JavaScript that evaluates the changes since the previous version, deduces the next one to be released and, optionally, generates a changelog in Markdown for the new version.
 
-## Checklist
+## DocOpt
 
-- [x] Read the [Contribution guide](https://github.com/raini-dev/raini/blob/master/.github/CONTRIBUTING.md#suggesting-a-workshop)
-- [x] Create a repository using the [Raini workshop template](https://github.com/raini-dev/raini-workshop-template/). Include all branches to avoid the need of creating `dev` branch by yourself;
-- [x] Fill in the `README.md` file;
-- [x] **If the workshop includes theoretical part**, create a PowerPoint presentation using our template (TBD: `Presentation template`) and share it as `./slides.pptx` in the repository (check out our [Theory Preparation Guide](https://github.com/raini-dev/raini/blob/master/docs/guides/theory-preparation-guide.md);
-- [ ] **IF the workshop includes practical part**, put the starting point of code in the `dev` branch and all the following recovery points in subbranches of the repository (check out our [Code Preparation Guide](https://github.com/raini-dev/raini/blob/master/docs/guides/code-preparation-guide.md);
-- [ ] Fill in the `./INSTRUCTORS_NOTES.md` (see [Instructor's Notes Guide](https://github.com/raini-dev/raini/blob/master/docs/guides/instructors-notes-guide.md) for details);
-- [ ] Create a `Propose a workshop` issue [here](https://github.com/raini-dev/raini/issues/new/choose). Follow the guildelines in the issue template;
-- [ ] Make sure everything above is checked and delete this checklist.
+See [DocOpt](https://docopt.org).
 
-## Before the workshop
+```text
+InVersion
 
-- Fork and clone this repository to your local machine or import it to your favourite tool like [Glitch](https://glitch.com)
+InVersion is a tool written in JavaScript that evaluates the changes
+since the previous version, deduces the next one to be released and,
+optionally, generates a changelog in Markdown for the new version.
 
-## List of Requirements
+Usage:
+  node src/index.mjs [--patch] [--minor] [--major] [--changelog]
 
-- basic knowledge of Git including common commands (`commit`, `push`, `merge`, `log`)
-- good understanding of JavaScript (ES6+) for following with the code
-- intermediate English to be able to keep up with the materials
-- a laptop with Internet access and a code editor of your choice
-- an active GitHub account
-- Node Latest installed on the machine (v13.12.0 at the time of writing)
-- Git installed on the machine (v2.21.0 at the time of writing)
+Options:
+  --patch       Force bumping patch version
+  --minor       Force bumping minor version
+  --major       Force bumping major version
+  --changelog   Create changelog instead of the new version
+```
 
-## Description
+## Usage
 
-Learn how to share the updates of your software with collaborators, users and other stakeholders in a clear and understandable way. Automate the process of writing the project history following the industry standarts and best practices.
+### Running
 
-In this workshop we will:
+```text
+node src/index.mjs
+```
 
-- discuss various approaches to versioning
-- deep-dive into Semantic Versioning, by far the most popular versioning scheme nowadays
-- talk about different sources of truth about the history of a project
-- define what a change log is and where we can store it to make it accessible for everyone
-- learn how to maintain parallel flows of versioning within a project
-- use Test-Driven Development approach to build a dependency-free tool in Node that is capable of deducing the next version to come up and creating change logs
+### Testing
 
-## Authors
+```text
+node tests/index.mjs
+```
 
-### Sergei Orlov
+## What to do next
 
-Creator of Raini.dev.
+- Add support for `[--debug]` option that instructs the program to output debug information about its execution process on each step. The format and the messages being displayed are designed by you. If you want, you can extract the colouring code from the `./tests/clown.mjs` and apply some styling - just make sure you don't break the tests. For example, it could be something like:
 
----
+```text
+DEBUG: Latest version: 1.0.1
+DEBUG: Latest version commit: ab23c4f
+DEBUG: Found 2 patch-level changes
+DEBUG: Found 1 minor-level change
+DEBUG: Version candidate: 1.1.0
+DEBUG: Ignoring changelog creation...
+1.1.0%
+```
 
-This repository is created from the [Raini workshop template](https://github.com/raini-dev/raini-workshop-template/).
-
-To learn more about using template repositories on GitHub, refer to [this page](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template).
+- Add `[--help]` option that will output the message from the [DocOpt](#docopt) section and immediately quit with code **0**. Don't forget to add the new options to the help message as you go!
+- Update conventions to fully support [GitMoji](https://gitmoji.carloscuesta.me/):
+  - major: 💥 (`:boom:`)
+  - minor: ✨ (`:sparkles:`)
+  - patch: 🐛 (`:bug:`) **OR** 🚑 (`:ambulance:`) **OR** 🔑 (`:lock:`)
+- **\*** Only consider fully SemVer-compliant tags when extracting `latestVersion` (current implementation works in incorrect scenarios, e.g. **1.foo0.bar0**)
+- **\*** Add `[--pre-release=<s>]` option that will instruct the program to produce a new version and append a hyphen and the provided pre-release to it. If the `--pre-release` value does not end with a number, **1** must be added to resolve possible issues in further releases. If there is the same version and the same pre-release postfix, the pre-release number must be incremented. E.g.:
+  - (**--pre-release=alpha**): `1.3.7` -> `2.0.0-alpha.1` -> `2.0.0-alpha.2`
+- **\*\*** Add `[--build-metadata=<s>]` option that will produce a new version and append a plus sign and the provided build metadata to it. If the `--build-metadata` value does not end with a number, **1** must be added to resolve possible issues in further releases. If there is the same version and the same build metadata, the build metadata number must be added or incremented. If there is the same version, the same pre-release postfix and the same build metadata, the pre-release number must be incremented. E.g.:
+  - (**--build-metadata=20200510**): `1.3.7` -> `1.3.8+20200510.1` -> `1.3.8+20200510.2`
+  - (**--pre-release=rc --build-metadata=20200510**): `1.3.7-rc.1` -> `1.3.8-rc.1+20200510.1` -> `1.3.8-rc.2+20200510.1`
