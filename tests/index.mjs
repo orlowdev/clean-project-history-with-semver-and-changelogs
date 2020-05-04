@@ -1,6 +1,6 @@
 import "./clown.spec.mjs"
 import "./0_1_execWith.spec.mjs"
-// import "./0_2_Pipe.spec.mjs"
+import "./0_2_Pipe.spec.mjs"
 // import "./1_GetLatestVersion.spec.mjs"
 // import "./2_MakeNewVersion.spec.mjs"
 // import "./3_ExitIfNoVersion.spec.mjs"
