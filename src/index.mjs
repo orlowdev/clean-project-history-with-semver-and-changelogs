@@ -4,6 +4,7 @@ import { GetLatestVersion } from "./pipes/GetLatestVersion.mjs"
 import { MakeNewVersion } from "./pipes/MakeNewVersion.mjs"
 import { ExitIfNoVersion } from "./pipes/ExitIfNoVersion.mjs"
 import { GetVersionCommit } from "./pipes/GetVersionCommit.mjs"
+import { GetChanges } from "./pipes/GetChanges.mjs"
 import { Log } from "./pipes/Log.mjs"
 
 const argv = process.argv.slice(2)
@@ -24,5 +25,6 @@ GetLatestVersion(execOrElse(() => "0.0.0"))
   .concat(MakeNewVersion)
   .concat(ExitIfNoVersion(() => process.exit(0)))
   .concat(GetVersionCommit(execOrExit))
+  .concat(GetChanges(execOrExit))
   .concat(Log(console.log))
-  .run({ argv })
+  .run({ argv, conventions })
